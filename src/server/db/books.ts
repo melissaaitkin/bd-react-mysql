@@ -11,6 +11,30 @@ export const all = async () => {
     });
 }
 
+export const insert = async (book: any) => {
+    return new Promise((resolve, reject) => {
+        Connection.query('INSERT INTO book SET ?', book, (err, result) => {
+            if (err) {
+                return reject(err);
+            }
+            resolve(result);
+        });
+    });
+}
+
+export const Delete = async (id: any) => {
+    return new Promise((resolve, reject) => {
+        Connection.query('DELETE FROM book WHERE ID = ?', id, (err, result) => {
+            if (err) {
+                return reject(err);
+            }
+            resolve(result);
+        });
+    });
+}
+
 export default {
-    all
+    all,
+    insert,
+    Delete
 }
