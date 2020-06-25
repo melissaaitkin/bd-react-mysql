@@ -22,7 +22,7 @@ class App extends React.Component<IAppProps, IAppState> {
 				<h1 className="text-primary text-center">My Books</h1>\
 				<ul classname="list-group">
 					{this.state.books.map(book => {
-						return <li className="list-group-item">{book.title}</li>
+						return <li className="list-group-item"><span class="font-weight-bold">{book.title</span> by {book.author}</li>
 					})}
 				</ul>
 			</main>
